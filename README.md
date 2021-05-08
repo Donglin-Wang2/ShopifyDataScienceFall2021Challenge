@@ -10,7 +10,7 @@ All the evidence makes me think that a bucketed approach would be more appropria
 
 The notations go as follows:
 
-$n$: Total number of orders
+<img src="https://latex.codecogs.com/gif.latex?$n$: Total number of orders />
 
 $i \in \{1, ..., n\}$: Index of the orders
 
