@@ -10,9 +10,9 @@ All the evidence makes me think that a bucketed approach would be more appropria
 
 The notations go as follows:
 
-<img src="https://latex.codecogs.com/gif.latex?$n$: Total number of orders />
+<img src="https://latex.codecogs.com/gif.latex?n: Total number of orders" />
 
-$i \in \{1, ..., n\}$: Index of the orders
+<img src="https://latex.codecogs.com/gif.latex?i \in \{1, ..., n\}: Index of the orders" />
 
 $t_i$: The order amount of the $i$th order
 
