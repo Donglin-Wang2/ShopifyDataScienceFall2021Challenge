@@ -5,31 +5,8 @@
 The order amount of stores 42 and 78 deviates significantly from the results of the orders both in terms of the transaction total and prices per shoe. Therefore, the AOV is inflated largely due to these two outliers.
 
 ## Q1.2: What metric would I use?
-
-All the evidence makes me think that a bucketed approach would be more appropriate. Namely, we divide the order amount into buckets, normalize each bucket, and sum the normalized value. Then, assuming that stores with higher order-amount also have higher profit, we can choose a small scaling factor that reward stores with the higher order-amount.
-
-The notations go as follows:
-
-<img src="https://latex.codecogs.com/gif.latex?n: Total number of orders" />
-
-<img src="https://latex.codecogs.com/gif.latex?i \in \{1, ..., n\}: Index of the orders" />
-
-$t_i$: The order amount of the $i$th order
-
-$B$: Bucket size
-
-$f(t_i)$: A scaling coefficient based on the order amount
-
-$$Weighted Bucket Average = \sum_{i \in \{1, ..., n\}} f(t_i) \times \frac{t_i \mod B}{B}$$
-
-Where $f(t_i)$ is any function that has the property:
-
-$$\int_{0}^{\max \{t_1, ..., t_n\}}f(x)dx = 1$$
-
-This way, $Weighted Bucket Average$ is guaranteed to have a value between 0 and 1. For this analysis, assuming that we favor the orders with larger amount, we can naively put:
-$$f(t_i) = \frac{2t_i}{\max \{t_1, ..., t_n\} ^ 2}$$
-
-In large, the $Weighted Bucket Average$ are low when the order amount is dichotomized. If we have a low value for $Weighted Bucket Average$, that means that most stores fail to fulfill their full potential compared to the stores with more revenue. 
+**Because GitHub's README does not support Latex, I screenshot my answers and pasted it below.**
+![Answer to Q1.2](./img6.png)
 
 ## Q1.3: What is the value of the metric?
 
@@ -104,30 +81,8 @@ According to the documentation of `pandas.DataFrame.boxplot`, the edges of the b
 
 As we can see, we only have 77 outliers above the top whiskers. This is not too bad, since they are only a fraction of the 5000 orders in the dataset. However, we can also see from the bar graph that the median deviates drastically from the more expensive orders. This means that, although we have eliminated the obvious outliers, we still have a lot of high-end shoe store that charges at a price much higher than the median price.
 
-All the evidence makes me think that a bucketed approach would be more appropriate. Namely, we divide the order amount into buckets, normalize each bucket, and sum the normalized value. Then, assuming that stores with higher order-amount also have higher profit, we can choose a small scaling factor that reward stores with the higher order-amount.
-
-The notations go as follows:
-
-$n$: Total number of orders
-
-$i \in \{1, ..., n\}$: Index of the orders
-
-$t_i$: The order amount of the $i$th order
-
-$B$: Bucket size
-
-$f(t_i)$: A scaling coefficient based on the order amount
-
-$$Weighted Bucket Average = \sum_{i \in \{1, ..., n\}} f(t_i) \times \frac{t_i \mod B}{B}$$
-
-Where $f(t_i)$ is any function that has the property:
-
-$$\int_{0}^{\max \{t_1, ..., t_n\}}f(x)dx = 1$$
-
-This way, $Weighted Bucket Average$ is guaranteed to have a value between 0 and 1. For this analysis, assuming that we favor the orders with larger amount, we can naively put:
-$$f(t_i) = \frac{2t_i}{\max \{t_1, ..., t_n\} ^ 2}$$
-
-In large, the $Weighted Bucket Average$ are low when the order amount is dichotomized. If we have a low value for $Weighted Bucket Average$, that means that most stores fail to fulfill their full potential compared to the stores with more revenue. 
+**Because GitHub's README does not support Latex, I screenshot my answers and pasted it below.**
+![Answer to Q1.2](./img6.png)
 
 ## Q3: What is the value of the metric?
 For my metric, I choose $B = 100$.
